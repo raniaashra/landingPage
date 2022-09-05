@@ -1,11 +1,11 @@
 //specify element by id
 const ulist = document.getElementById('navbar__list');
 //make a loop of <li> and <a> inside <ul>
-for(let x = 1; x<5; x++){
+for(let x = 1; x<6; x++){
     //make an element <li>
-    let list =document.createElement('li'); 
+    const list =document.createElement('li'); 
     //make an element <a>
-    let al =document.createElement('a'); 
+    const al =document.createElement('a'); 
     //set an attribute in <a> name href
     al.setAttribute('href', '#'); 
     al.textContent ='section'+x; 
@@ -15,15 +15,18 @@ for(let x = 1; x<5; x++){
     list.appendChild(al); 
     // append <li> to the main list <ul>
     ulist.appendChild(list);  
+    ulist.style.backgroundColor ='rgb(41, 41, 71)';
     
-    //  There are several javascript methods for scrolling, 
-    // scroll(), scrollBy(), and scrollIntoView() are all acceptable
+    // use event click 
     al.addEventListener("click", function (e) {
         e.preventDefault();
-        const sec1 =document.getElementById('section'+ x);
-        sec1.scrollIntoView();
+        let sec =document.getElementById('section'+ x);
+        sec.scrollIntoView();
         this.scroll({
+            
             behavior:"smooth"
         });
 });
 }
+
+
