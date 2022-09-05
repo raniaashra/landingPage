@@ -16,6 +16,7 @@ body {
     margin: 0;
     font-family: 'Merriweather', serif;
     color: #fff;
+
 }
 
 
@@ -59,17 +60,13 @@ section {
     position: relative;
     min-height: 80vh;
 }
-
-html{
-    scroll-behavior: smooth;
-}
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;
-    text-align: right;
+    text-align: left;
     
 }
 
@@ -81,6 +78,7 @@ ul li{
     margin-left: 20px;
     padding-top: 15px;
     padding-bottom: 15px;
+    display: flex;
 }
 ul li a{
     text-decoration: none;
@@ -143,6 +141,12 @@ section:nth-of-type(even) .landing__container {
     text-align: right;
 }
 
+a{
+    color: rgb(6, 160, 6);
+    
+}
+li:active{ background-color: #fff; }
+a:active{color: #000;}
 /* Background Circles */
 /* Note that background circles are created with psuedo elements before and after */
 /* Circles appear to be random do to use of :nth-of-type psuedo class */
