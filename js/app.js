@@ -16,17 +16,29 @@ for(let x = 1; x<6; x++){
     // append <li> to the main list <ul>
     ulist.appendChild(list);  
     ulist.style.backgroundColor ='rgb(41, 41, 71)';
-    
+
+    //check if it visible in viewport
+    const sections = document.querySelectorAll('section');
+
+    for(let i =0; i<sections.length;i++){
+        let rect = sections[i].getBoundingClientRect();
+        console.log(rect);
+        if(sections[i].offsetTop === rect.top){
+            sections[i].classList.add('your-active-class');
+        }
+        else{
+            sections[i].classList.remove('your-active-class');
+        }
+    }
     // use event click 
     al.addEventListener("click", function (e) {
         e.preventDefault();
         let sec =document.getElementById('section'+ x);
-        sec.scrollIntoView();
-        this.scroll({
-            
-            behavior:"smooth"
-        });
+        sec.scrollIntoView({behavior:"smooth"});
 });
+
 }
+
+
 
 
