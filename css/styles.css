@@ -144,7 +144,9 @@ and (-webkit-min-device-pixel-ratio: 3) {
 }
 /* for tablets */
 @media only screen and (min-width: 768px) and (max-width: 1024px){
-
+    .navbar__menu{
+        width: 100%;
+    }
 }
 /* for ipads */
 @media only screen 
@@ -170,7 +172,9 @@ a{
     color: rgb(6, 160, 6);
     
 }
-li:active{ background-color: #fff; }
+li:hover,
+li:active{ background-color: rgb(238, 233, 233); color: #000; border-radius: 10%; padding: 10px;}
+a:hover,
 a:active{color: #000;}
 /* Background Circles */
 /* Note that background circles are created with psuedo elements before and after */
