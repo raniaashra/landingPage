@@ -90,6 +90,7 @@ ul li a{
     font-size: 100%;
     display: flex;
     flex-wrap:wrap;
+    
 }
 .navbar__menu .menu__link {
     display: block;
@@ -172,10 +173,14 @@ a{
     color: rgb(6, 160, 6);
     
 }
+
 li:hover,
 li:active{ background-color: rgb(238, 233, 233); color: #000; border-radius: 10%; padding: 10px;}
+
 a:hover,
 a:active{color: #000;}
+
+
 /* Background Circles */
 /* Note that background circles are created with psuedo elements before and after */
 /* Circles appear to be random do to use of :nth-of-type psuedo class */
