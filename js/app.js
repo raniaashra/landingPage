@@ -5,6 +5,7 @@ const sections = document.querySelectorAll('section');
 for(let x = 0; x<sections.length; x++){
     //make an element <li>
     const list =document.createElement('li'); 
+    
     //make an element <a>
     const al =document.createElement('a'); 
     //set an attribute in <a> name href
@@ -17,19 +18,24 @@ for(let x = 0; x<sections.length; x++){
     // append <li> to the main list <ul>
     ulist.appendChild(list);  
     ulist.style.backgroundColor ='rgb(41, 41, 71)';
-
     //check if it visible in viewport
     
-    
-    for(let i =0; i<sections.length;i++){
-        let rect = sections[i].getBoundingClientRect();
+    function secposi(){
+    for(let section of sections){
+        let rect = section.getBoundingClientRect();
         console.log(rect);
-        if(sections[i].offsetTop === rect.top && sections[i].offsetHeight === rect.bottom && sections[i].offsetLeft === rect.left){
-            sections[i].classList.add('your-active-class');
+        
+                if(section.offsetTop>=0 && section.offsetHeight >= rect.bottom){
+                    section.classList.add('your-active-class');
+                    console.log("true");
+                }
+                else{
+                    section.classList.remove('your-active-class');
+                    console.log("false");
+                }  
+            
         }
-        else{
-            sections[i].classList.remove('your-active-class');
-        }
+    
     }
     // use event click 
     al.addEventListener("click", function (e) {
@@ -43,3 +49,4 @@ for(let x = 0; x<sections.length; x++){
 
 
 
+document.addEventListener('scroll', secposi);
