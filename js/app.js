@@ -19,23 +19,21 @@ for(let x = 0; x<sections.length; x++){
     ulist.appendChild(list);  
     ulist.style.backgroundColor ='rgb(41, 41, 71)';
     //check if it visible in viewport
-    
     function secposi(){
     for(let section of sections){
         let rect = section.getBoundingClientRect();
         console.log(rect);
-        
-                if(section.offsetTop>=0 && section.offsetHeight >= rect.bottom){
-                    section.classList.add('your-active-class');
-                    console.log("true");
+                window.onscroll =function(){
+                    sections.forEach(function(active){
+                if(active.getBoundingClientRect().top >=-200 && active.getBoundingClientRect().top <= 150){
+                    active.classList.add('your-active-class');  
                 }
                 else{
-                    section.classList.remove('your-active-class');
-                    console.log("false");
+                    active.classList.remove('your-active-class');
                 }  
-            
+            });
         }
-    
+    }
     }
     // use event click 
     al.addEventListener("click", function (e) {
@@ -43,10 +41,5 @@ for(let x = 0; x<sections.length; x++){
         let sec =document.getElementById('section'+ (x+1));
         sec.scrollIntoView({behavior:"smooth"});
 });
-
 }
-
-
-
-
 document.addEventListener('scroll', secposi);
